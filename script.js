@@ -5,8 +5,12 @@ var MainController = function($scope, $http) {
         $scope.user = response.data;
     };
 
+    var onError = function(response){
+        $scope.error = "Could not fetch the user.";
+    }
+
     $http.get("https://api.github.com/users/nastanford")
-         .then(onUserComplete);
+         .then(onUserComplete, onError);
 
     $scope.message = "Hello, Angular Beginner!";
 

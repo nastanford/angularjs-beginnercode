@@ -11,8 +11,12 @@
 
   <body>
     <div ng-controller="MainController">
-        <h1>{{message}}</h1>
 
+      <h1>{{message}}</h1>
+
+        <div>
+          {{error}}
+        </div>
         <div>
           <h3>{{user.name}}</h3>
           <div>{{user.location}}</div>
