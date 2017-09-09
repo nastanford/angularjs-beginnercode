@@ -19,6 +19,6 @@
     
       };
     
-      app.controller("MainController", MainController);
+      app.controller("MainController",["$scope","$http",MainController]);
     
     }());
