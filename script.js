@@ -1,12 +1,13 @@
 // JavaScript Code goes here
-var MainController = function($scope) {
+var MainController = function($scope, $http) {
 
-    var person = {
-        firstName:  "Scott",
-        lastName: "Allen",
-        imageSrc: "http://odetocode.com/Images/scott_allen_2.jpg"
+    var onUserComplete = function(response){
+        $scope.user = response.data;
     };
 
+    $http.get("https://api.github.com/users/nastanford")
+         .then(onUserComplete);
+
     $scope.message = "Hello, Angular Beginner!";
-    $scope.person = person;
+
 }
