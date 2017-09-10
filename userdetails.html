@@ -1,6 +1,8 @@
 <div id="userDetails">
     <h2>{{user.name}}</h2>
-    <img ng-src="http://www.gravatar.com/avatar/{{user.avatar_url}}" width="82" height="82" title="{{user.name}}">Order:
+    <img ng-src="{{user.avatar_url}}" width="82" height="82" title="{{user.name}}">
+    <hr>
+    Order:
     <select ng-model="repoSortOrder">
         <option value="+name">Name</option>
         <option value="-stargazers_count">Stars</option>
