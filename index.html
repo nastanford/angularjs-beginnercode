@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="githubViewer">
 
-  <head>
-    <title>Anuglar Beginner Code</title>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    
+<head>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" 
+            src="https://code.angularjs.org/1.3.0-beta.5/angular.js">
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-  </head>
+    <script src="github.js"></script>
+</head>
 
-  <body>
-    <div ng-controller="MainController">
+<body ng-controller="MainController">
+    <h1>{{message}}</h1>
 
-      <h1>{{message}}</h1>
+    <div>{{ error }}</div>
 
-        <div>
-          {{error}}
-        </div>
-        <div>
-          <h3>{{user.name}}</h3>
-          <div>{{user.location}}</div>
-          <img ng-src="{{user.avatar_url}}" title="{{user.name}} {{person.lastName}}">
+    {{ countdown }}
+    <form name="searchUser" ng-submit="search(username)">
+        <input type="search" required ng-model="username" />
+        <input type="submit" value="Search">
+    </form>
 
-        </div>
-
-    </div>
-
-  </body>
+    <div ng-include="'userdetails.html'" ng-show="user"></div>
+    
+</body>
 
 </html>
